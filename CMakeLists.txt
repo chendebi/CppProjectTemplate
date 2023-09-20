@@ -29,7 +29,7 @@ function(make_source_group BASE_DIR)
         message(STATUS "file: ${ABS_FILE_PATH} added to group ${GROUP}")
     endforeach()
 endfunction()
-file(GLOB_RECURSE project_source_files "./Source/**.cpp" "./Include/**.h")
+file(GLOB_RECURSE project_source_files "src/**.cpp" "src/**.h")
 make_source_group(${CMAKE_CURRENT_SOURCE_DIR} "${project_source_files}")
 
 add_library(${PROJECT_NAME} STATIC ${project_source_files})
